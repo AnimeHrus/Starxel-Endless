@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerShip playerShip;
+    private PlayerShip _playerShip;
 
     private void Start()
     {
-        playerShip = playerShip == null ? GetComponent<PlayerShip>() : playerShip;
-        if(playerShip == null)
+        _playerShip = _playerShip == null ? GetComponent<PlayerShip>() : _playerShip;
+        if (_playerShip == null)
         {
             Debug.LogError("Player not set to controller");
         }
@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(playerShip != null)
+        if(_playerShip != null)
         {
-            playerShip.MoveToTouchPosition(GetTouchPosition());
+            _playerShip.MoveToTouchPosition(GetTouchPosition());
         }
     }
 
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            return playerShip.transform.position;
+            return _playerShip.GetTransformPosition();
         }
     }
 }

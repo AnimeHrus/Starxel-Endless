@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Heart : MonoBehaviour
 {
-    private Animator anim;
-    private float interval;
+    private Animator _animator;
+    private float _animationLength;
+
     private void Start()
     {
-        anim = GetComponent<Animator>();
-        interval = anim.GetCurrentAnimatorStateInfo(0).length;
+        _animator = _animator == null ? GetComponent<Animator>() : _animator;
+        _animationLength = _animator.GetCurrentAnimatorStateInfo(0).length;
     }
     private void Update()
     {
-        if (anim.enabled)
+        if (_animator.enabled)
         {
-            if(interval > 0)
+            if(_animationLength > 0)
             {
-                interval -= Time.unscaledDeltaTime;
+                _animationLength -= Time.unscaledDeltaTime;
             }
             else
             {
@@ -25,5 +26,10 @@ public class Heart : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    public void StartDestroyAnimation()
+    {
+        _animator.enabled = true;
     }
 }

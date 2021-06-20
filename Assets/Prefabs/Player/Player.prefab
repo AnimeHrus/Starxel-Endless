@@ -4768,6 +4768,7 @@ GameObject:
   - component: {fileID: 5016083499739265893}
   - component: {fileID: 4179503337233611771}
   - component: {fileID: 1242411355189648539}
+  - component: {fileID: 6885122321430475586}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4900,14 +4901,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37f5709c9126924a97b3bc0311b5b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts:
+  _flashAnimator: {fileID: 0}
+  _hearts:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  playerLaser: {fileID: 5593474634203720890, guid: 24cc22fc5d39ef04eac22fa87f5beb0a,
-    type: 3}
-  leftGunPosition: {fileID: 5290063422944061942}
-  rightGunPosition: {fileID: 3333414496851725397}
 --- !u!114 &1242411355189648539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4920,6 +4918,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3626b49f93b7db42a9e298ae38ac434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6885122321430475586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73611e8ac92c9314dae474cbfc4e237f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerLaser: {fileID: 5593474634203720890, guid: 24cc22fc5d39ef04eac22fa87f5beb0a,
+    type: 3}
+  _leftGunPosition: {fileID: 5290063422944061942}
+  _rightGunPosition: {fileID: 3333414496851725397}
 --- !u!1 &2804284295036119850
 GameObject:
   m_ObjectHideFlags: 0
