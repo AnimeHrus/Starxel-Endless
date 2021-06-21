@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerShip : MonoBehaviour
 {
-    [SerializeField] private Animator _flashAnimator;
     [SerializeField] private Heart[] _hearts;
+    [SerializeField] private Flash _flash;
     private Animator _animator;
     private Transform _transform;
     private float _speed = 10f;
@@ -17,7 +17,6 @@ public class PlayerShip : MonoBehaviour
     {
         _transform = _transform == null ? GetComponent<Transform>() : _transform;
         _animator = _animator == null ? GetComponent<Animator>() : _animator;
-        _flashAnimator.Play("Flash", 0, 1);
     }
 
     public Vector2 GetTransformPosition()
@@ -34,7 +33,7 @@ public class PlayerShip : MonoBehaviour
     {
         if (_shipState != ShipState.Normal) return;
         StartCoroutine(BecomeImmortal());
-        _flashAnimator.Play("Flash", 0, 0);
+        _flash.PlayFlashAnimation();
         if (_health > 0)
         {
             _health -= damage;

@@ -4901,11 +4901,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37f5709c9126924a97b3bc0311b5b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flashAnimator: {fileID: 0}
   _hearts:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _flash: {fileID: 0}
 --- !u!114 &1242411355189648539
 MonoBehaviour:
   m_ObjectHideFlags: 0
