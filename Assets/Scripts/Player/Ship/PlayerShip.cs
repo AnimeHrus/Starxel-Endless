@@ -2,24 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Transform))]
 public class PlayerShip : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Transform _transform;
     [SerializeField] private Heart[] _hearts;
     [SerializeField] private Flash _flash;
-    private Animator _animator;
-    private Transform _transform;
-    private float _speed = 10f;
+    private const float _speed = 10f;
     private int _health = 3;
     private ShipState _shipState = ShipState.Normal;
     private float immortalCoolDown = 3f;
 
-    private void Start()
-    {
-        _transform = _transform == null ? GetComponent<Transform>() : _transform;
-        _animator = _animator == null ? GetComponent<Animator>() : _animator;
-    }
-
-    public Vector2 GetTransformPosition()
+    public Vector2 GetCurrentPosition()
     {
         return _transform.position;
     }
@@ -57,7 +53,6 @@ public class PlayerShip : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
-        Time.timeScale = 0;
     }
 
     enum ShipState

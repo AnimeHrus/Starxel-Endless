@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Transform))]
 public class PlayerLaser : MonoBehaviour
 {
-    private float _speed = 20.0f;
-    private float _destroyCoolDown = 3.0f;
-    private Transform _transform;
+    [SerializeField] private Transform _transform;
+    private const float _speed = 20f;
+    private const float _destroyCoolDown = 3f;
 
     private void Start()
     {
-        _transform = _transform == null ? GetComponent<Transform>() : _transform;
         Destroy(gameObject, _destroyCoolDown);
     }
-    private void FixedUpdate()
+    private void Update()
     {
         _transform.position += Vector3.up * _speed * Time.deltaTime;
     }

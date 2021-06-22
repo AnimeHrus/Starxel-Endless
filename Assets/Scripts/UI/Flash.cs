@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Flash : MonoBehaviour
 {
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
 
     private void Start()
     {
-        _animator = _animator == null ? GetComponent<Animator>() : _animator;
-        _animator.Play("Flash", 0, 1);
+        PlayFlashAnimation(1);
     }
 
-    public void PlayFlashAnimation()
+    public void PlayFlashAnimation(float normalizedTime = 0)
     {
-        _animator.Play("Flash", 0, 0);
+        _animator.Play("Flash", 0, normalizedTime);
     }
 }

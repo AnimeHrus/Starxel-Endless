@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 1175175146}
   - component: {fileID: 1175175145}
   - component: {fileID: 1175175147}
-  - component: {fileID: 1175175148}
+  - component: {fileID: 1175175149}
   m_Layer: 5
   m_Name: TeamLogo
   m_TagString: Untagged
@@ -481,7 +481,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1175175148
+--- !u!114 &1175175149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1175175143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3b8202be94b7b4498187c54b5710747, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f6c867bc3fd92c409f01c2fb7baaae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2028976412
