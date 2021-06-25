@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(GameObject))]
-[RequireComponent(typeof(Transform))]
 public class PlayerGuns : MonoBehaviour
 {
     [SerializeField] private GameObject _playerLaser;
     [SerializeField] private Transform[] _gunsPositions;
-    private WaitForSeconds _attackIntensity;
+    [SerializeField] private float _attackIntensityTime;
+    private WaitForSeconds _attackIntensityWait;
 
     private void Awake()
     {
-        _attackIntensity = new WaitForSeconds(0.3f);
+        _attackIntensityWait = new WaitForSeconds(_attackIntensityTime);
     }
 
     private void Start()
@@ -25,7 +24,7 @@ public class PlayerGuns : MonoBehaviour
         while (gameObject != null)
         {
             InstantiateLaser(laser, positions);
-            yield return _attackIntensity;
+            yield return _attackIntensityWait;
         }
     }
 

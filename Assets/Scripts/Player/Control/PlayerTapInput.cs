@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerShip))]
-[RequireComponent(typeof(Camera))]
+[RequireComponent(typeof(PlayerMover))]
 public class PlayerTapInput : MonoBehaviour
 {
-    [SerializeField] private PlayerShip _playerShip;
+    [SerializeField] private PlayerMover _playerMover;
     [SerializeField] private Camera _camera;
 
     private void Update()
     {
-        _playerShip.MoveToTouchPosition(GetTouchPosition());
+        _playerMover.MoveToTouchPosition(GetTouchPosition());
     }
 
     private Vector2 GetTouchPosition()
@@ -23,7 +22,7 @@ public class PlayerTapInput : MonoBehaviour
         }
         else
         {
-            return _playerShip.GetCurrentPosition();
+            return _playerMover.GetCurrentPosition();
         }
     }
 }

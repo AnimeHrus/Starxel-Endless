@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 615034916451362234}
   - component: {fileID: 615034916451362235}
   - component: {fileID: 4974267969663376849}
-  - component: {fileID: 4608559065559952437}
+  - component: {fileID: 4358332885829786071}
   m_Layer: 5
   m_Name: Flash
   m_TagString: Untagged
@@ -62,7 +62,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
-  m_Maskable: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -95,7 +96,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4608559065559952437
+--- !u!114 &4358332885829786071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 615034916451362237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10381df2fb997a5459e4ce07aa182236, type: 3}
+  m_Script: {fileID: 11500000, guid: e7eec0c6bd3a8474ca517b6c6159388d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 4974267969663376849}

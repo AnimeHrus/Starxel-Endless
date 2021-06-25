@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TeamSplashScreen : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     public void LoadGameScene()
     {

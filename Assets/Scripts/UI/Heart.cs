@@ -9,6 +9,6 @@ public class Heart : MonoBehaviour
 
     public void StartDestroyAnimation()
     {
-        _animator.enabled = true;
+        _animator.Play("Hit");
     }
 }

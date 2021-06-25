@@ -2125,6 +2125,62 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+  LifetimeByEmitterSpeedModule:
+    enabled: 0
+    m_Curve:
+      serializedVersion: 2
+      minMaxState: 1
+      scalar: 1
+      minScalar: 1
+      maxCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: -0.8
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0.2
+          inSlope: -0.8
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      minCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    m_Range: {x: 0, y: 1}
   ForceModule:
     enabled: 0
     x:
@@ -4706,6 +4762,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4748,6 +4805,8 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
+  m_FreeformStretching: 0
+  m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
@@ -4766,9 +4825,13 @@ GameObject:
   - component: {fileID: 2641724304301239872}
   - component: {fileID: 2641724304301239874}
   - component: {fileID: 5016083499739265893}
-  - component: {fileID: 4179503337233611771}
-  - component: {fileID: 1242411355189648539}
-  - component: {fileID: 6885122321430475586}
+  - component: {fileID: 5081715134410865332}
+  - component: {fileID: 2538094568936274472}
+  - component: {fileID: 1850950478903592738}
+  - component: {fileID: 1506718506}
+  - component: {fileID: 3321701164819619881}
+  - component: {fileID: 8261102962386740251}
+  - component: {fileID: 7082002347776954624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4808,6 +4871,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4889,7 +4953,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4179503337233611771
+--- !u!114 &5081715134410865332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4901,14 +4965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37f5709c9126924a97b3bc0311b5b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 5016083499739265893}
   _transform: {fileID: 2641724304301239873}
-  _hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _flash: {fileID: 0}
---- !u!114 &1242411355189648539
+  _speed: 10
+--- !u!114 &2538094568936274472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4920,9 +4979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3626b49f93b7db42a9e298ae38ac434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerShip: {fileID: 4179503337233611771}
+  _playerMover: {fileID: 5081715134410865332}
   _camera: {fileID: 0}
---- !u!114 &6885122321430475586
+--- !u!114 &1850950478903592738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4939,6 +4998,66 @@ MonoBehaviour:
   _gunsPositions:
   - {fileID: 5290063422944061942}
   - {fileID: 3333414496851725397}
+  _attackIntensityTime: 0.3
+--- !u!114 &1506718506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743e4a01a44ae6142aab619d0f8c4ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerState: {fileID: 8261102962386740251}
+  _flashScreen: {fileID: 7082002347776954624}
+  _hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &3321701164819619881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834db4a239f5c9c479e301f65da8ebb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5016083499739265893}
+--- !u!114 &8261102962386740251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beac8cae009273947a1beadcffdb2be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerAnimation: {fileID: 3321701164819619881}
+  immortalCoolDown: 3
+--- !u!114 &7082002347776954624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd0664de3af2e2478bec9f6170e605b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flash: {fileID: 615034916451362237, guid: 228a0adb6122045419507bdca2b7bd7a, type: 3}
+  _canvas: {fileID: 0}
 --- !u!1 &2804284295036119850
 GameObject:
   m_ObjectHideFlags: 0
