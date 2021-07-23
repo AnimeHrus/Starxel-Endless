@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    public void DestroyGameObject(float timeCoolDown = 0)
+    private void DestroyGameObject()
     {
-        Destroy(gameObject, timeCoolDown);
+        Destroy(gameObject);
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 615034916451362234}
   - component: {fileID: 615034916451362235}
   - component: {fileID: 4974267969663376849}
-  - component: {fileID: 4358332885829786071}
+  - component: {fileID: 6379425377276558588}
   m_Layer: 5
   m_Name: Flash
   m_TagString: Untagged
@@ -96,7 +96,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4358332885829786071
+--- !u!114 &6379425377276558588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 615034916451362237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eec0c6bd3a8474ca517b6c6159388d, type: 3}
+  m_Script: {fileID: 11500000, guid: e7d9efddd8abe3f4b9ec9d5bf5bdb64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 4974267969663376849}
