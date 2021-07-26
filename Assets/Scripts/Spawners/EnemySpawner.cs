@@ -15,7 +15,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float _spawnCoolDown;
     [SerializeField]
-    private int _xPixelRange;
+    [Range(0, 30)]
+    private float _constrictionProcent;
     private WaitForSeconds _spawnWait;
     private Vector2 _spawnPosition;
 
@@ -82,6 +83,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void SetRandomUpperPosition()
     {
-        _spawnPosition = _camera.ScreenToWorldPoint(new Vector2(Random.Range(0 + _xPixelRange, _camera.pixelWidth - _xPixelRange), _camera.pixelHeight));
+        _spawnPosition = _camera.ScreenToWorldPoint(new Vector2(Random.Range(0 + GetXConstriction(), _camera.pixelWidth - GetXConstriction()), _camera.pixelHeight));
+    }
+
+    private float GetXConstriction()
+    {
+        return (_constrictionProcent * _camera.pixelWidth) / 100;
     }
 }

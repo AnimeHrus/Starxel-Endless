@@ -86,6 +86,18 @@ TextureImporter:
   - first:
       213: -7245433517681746672
     second: BG_Star
+  - first:
+      213: -251839660766796828
+    second: G_BigLaser_0
+  - first:
+      213: 6498308080520882553
+    second: G_BigLaser_1
+  - first:
+      213: -4153462369580933767
+    second: G_BigLaser_2
+  - first:
+      213: 5252699531460982423
+    second: G_BigLaser_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -804,6 +816,90 @@ TextureImporter:
       bones: []
       spriteID: 01dded68a9c037b90800000000000000
       internalID: -7245433517681746672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_BigLaser_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3e3afa929418cf0800000000000000
+      internalID: -251839660766796828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_BigLaser_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 48
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9796f7c05c0ae2a50800000000000000
+      internalID: 6498308080520882553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_BigLaser_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 3, y: 3, z: 3, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d1d291bffeb56c0800000000000000
+      internalID: -4153462369580933767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_BigLaser_3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 3, y: 3, z: 3, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796b794d46655e840800000000000000
+      internalID: 5252699531460982423
       vertices: []
       indices: 
       edges: []

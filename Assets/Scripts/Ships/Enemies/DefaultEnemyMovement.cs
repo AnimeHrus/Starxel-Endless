@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class MerodonMovement : MonoBehaviour
+public class DefaultEnemyMovement : MonoBehaviour
 {
     [SerializeField]
     private float _pushForce;
