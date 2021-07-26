@@ -4,9 +4,13 @@
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private Rigidbody2D _rigidBody;
-    [SerializeField]
     private float _velocity;
+    private Rigidbody2D _rigidBody;
+
+    private void Awake()
+    {
+        _rigidBody = GetComponent<Rigidbody2D>();
+    }
 
     public void MoveToTouchPosition(Vector3 touchPosition)
     {

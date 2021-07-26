@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void CheckToDie()
     {
-        if (_health <= 0)
+        if (_health == 0)
         {
             OnBeKilled?.Invoke();
             Destroy(gameObject);

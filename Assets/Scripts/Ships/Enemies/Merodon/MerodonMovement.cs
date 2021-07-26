@@ -4,13 +4,17 @@
 public class MerodonMovement : MonoBehaviour
 {
     [SerializeField]
-    private Rigidbody2D _rigidBody;
-    [SerializeField]
     private float _pushForce;
     [SerializeField]
     private float _amplitudeMove;
     [SerializeField]
     private float _frequencyMove;
+    private Rigidbody2D _rigidBody;
+
+    private void Awake()
+    {
+        _rigidBody = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {

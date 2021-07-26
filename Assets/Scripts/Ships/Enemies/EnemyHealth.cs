@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void CheckToDie()
     {
-        if (_health <= 0)
+        if (_health == 0)
         {
             OnEnemyKilled?.Invoke();
             Destroy(gameObject);
