@@ -3,7 +3,8 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class PhoridaeMovement : MonoBehaviour
 {
-    [SerializeField]
+    private const float _minVelocity = 0.1f;
+    private const float _maxVelocity = 0.4f;
     private float _velocity;
     private Rigidbody2D _rigidBody;
     private Transform _playerTransform;
@@ -12,6 +13,7 @@ public class PhoridaeMovement : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _playerTransform = EnemySpawner.Instance.GetPlayerObject().transform;
+        _velocity = Random.Range(_minVelocity, _maxVelocity);
     }
 
     private void FixedUpdate()

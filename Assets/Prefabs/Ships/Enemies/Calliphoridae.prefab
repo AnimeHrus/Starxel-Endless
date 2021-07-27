@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &715913245661057756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4612846384557513056}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4612846384557513056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715913245661057756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8246948470926169769}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5516257072051654910
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +44,7 @@ GameObject:
   - component: {fileID: 75830011519904575}
   - component: {fileID: 1973796263732157483}
   - component: {fileID: 8228669852285165423}
+  - component: {fileID: 8354550351183626249}
   m_Layer: 0
   m_Name: Calliphoridae
   m_TagString: Untagged
@@ -31,7 +62,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4612846384557513056}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,9 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c5a424d462c9547bed44e048d42b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pushForce: 3
-  _amplitudeMove: 2
-  _frequencyMove: 2
 --- !u!114 &8228669852285165423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +191,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _scoreValue: 25
+  _explosionFX: {fileID: 1491978069300408847, guid: e52d73cb01ca4cc4ea70b8a04a454ac6,
+    type: 3}
+--- !u!114 &8354550351183626249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516257072051654910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429d3ef8879f0c14e82cb9b5c7991a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bomb: {fileID: 7345787657511301283, guid: 76b3158a9f0ff5c4aada2614c37998ae, type: 3}
+  _weaponTransform: {fileID: 4612846384557513056}
+  _shootFX: {fileID: 3270475698545043629, guid: 9a638fd15a132bf43ba97a64f45a1cb4,
+    type: 3}
+  _attackCoolDown: 5

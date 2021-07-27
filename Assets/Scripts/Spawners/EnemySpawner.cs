@@ -73,7 +73,10 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return _spawnWait;
         SetRandomUpperPosition();
-        Instantiate(_enemies[GetRandomEnemy()], _spawnPosition, Quaternion.identity);
+        if (_player != null)
+        {
+            Instantiate(_enemies[GetRandomEnemy()], _spawnPosition, Quaternion.identity);
+        }
     }
 
     private int GetRandomEnemy()

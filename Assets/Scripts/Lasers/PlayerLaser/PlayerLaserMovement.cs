@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class LaserMovement : MonoBehaviour
+public class PlayerLaserMovement : MonoBehaviour
 {
     [SerializeField]
     private float _velocity;

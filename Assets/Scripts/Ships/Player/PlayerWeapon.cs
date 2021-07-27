@@ -6,6 +6,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField]
     private GameObject _playerLaser;
     [SerializeField]
+    private GameObject _shootFX;
+    [SerializeField]
     private Transform[] _gunsPositions;
     [SerializeField]
     private float _attackIntensityTime;
@@ -35,6 +37,12 @@ public class PlayerWeapon : MonoBehaviour
         for (int gun = 0; gun < positions.Length; gun++)
         {
             Instantiate(laser, positions[gun].position, Quaternion.identity);
+            InstantiateShootFX(positions[gun]);
         }
+    }
+
+    private void InstantiateShootFX(Transform weaponPosition)
+    {
+        Instantiate(_shootFX, weaponPosition.position, Quaternion.identity, gameObject.transform);
     }
 }

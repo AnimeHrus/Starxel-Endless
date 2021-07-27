@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &186563720532071963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804212072014767749}
+  m_Layer: 0
+  m_Name: Contact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804212072014767749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186563720532071963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5593474634203720888}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5593474634203720890
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,6 +63,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1804212072014767749}
   - {fileID: 3093465242994875553}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -173,6 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60961667a6788a3479630e3a369b9e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitFX:
+  - {fileID: 1201670463355296149, guid: 3947f7f995c7852468a662af8b30e5e4, type: 3}
+  - {fileID: 3444114057233811978, guid: 8864150619c2c064dbc93c9fe0487121, type: 3}
+  _contactTransform: {fileID: 1804212072014767749}
 --- !u!1 &6381094779198965616
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +238,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5593474634203720888}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!198 &865266042792375958
 ParticleSystem:

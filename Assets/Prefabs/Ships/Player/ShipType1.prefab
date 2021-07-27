@@ -4830,6 +4830,7 @@ GameObject:
   - component: {fileID: 294929376651210897}
   - component: {fileID: 1506718506}
   - component: {fileID: 3321701164819619881}
+  - component: {fileID: 1783004923017251984}
   m_Layer: 0
   m_Name: ShipType1
   m_TagString: Player
@@ -4999,6 +5000,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerLaser: {fileID: 5593474634203720890, guid: 24cc22fc5d39ef04eac22fa87f5beb0a,
     type: 3}
+  _shootFX: {fileID: 3270475698545043629, guid: 9a638fd15a132bf43ba97a64f45a1cb4,
+    type: 3}
   _gunsPositions:
   - {fileID: 5290063422944061942}
   - {fileID: 3333414496851725397}
@@ -5015,6 +5018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743e4a01a44ae6142aab619d0f8c4ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionFX: {fileID: 1491978069300408847, guid: e52d73cb01ca4cc4ea70b8a04a454ac6,
+    type: 3}
 --- !u!114 &3321701164819619881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5027,6 +5032,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834db4a239f5c9c479e301f65da8ebb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1783004923017251984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a86fc7bf4dad54394c437f2f0f9689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _immortalCoolDown: 3
 --- !u!1 &2804284295036119850
 GameObject:
   m_ObjectHideFlags: 0

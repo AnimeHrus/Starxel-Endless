@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 7445167394926586273}
   - component: {fileID: 2122667470498542311}
   - component: {fileID: 8137277498915873616}
+  - component: {fileID: 51295685668229158}
+  - component: {fileID: 6885187351193274228}
+  - component: {fileID: 5546160885844714416}
   m_Layer: 0
   m_Name: BigLaser
   m_TagString: Untagged
@@ -120,3 +123,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &51295685668229158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399847190207480987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04678d1ab8846af45a7d1ad43571ce61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6885187351193274228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399847190207480987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32db8391fd8a1754795ecc6986a77966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5546160885844714416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399847190207480987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f2bcc288b1bd54daf2d5a2b49e6009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

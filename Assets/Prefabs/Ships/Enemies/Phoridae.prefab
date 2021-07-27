@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3457166244350704776}
   - component: {fileID: 7388815386771354351}
   - component: {fileID: 5668933533223893028}
+  - component: {fileID: 6102681572287264120}
   m_Layer: 0
   m_Name: Phoridae
   m_TagString: Untagged
@@ -146,7 +147,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -166,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76afbfa5c61543c4fbc7e06389581fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocity: 0.4
 --- !u!114 &5668933533223893028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +180,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 5
+  _scoreValue: 10
+  _explosionFX: {fileID: 2976420018217599315, guid: edf9127264689af498c7d8ef8130ec18,
+    type: 3}
+--- !u!114 &6102681572287264120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275311360660395903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5823f9fab45830940a8997b60fb229df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hits:
+  - {fileID: 1201670463355296149, guid: 3947f7f995c7852468a662af8b30e5e4, type: 3}
+  - {fileID: 3444114057233811978, guid: 8864150619c2c064dbc93c9fe0487121, type: 3}

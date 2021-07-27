@@ -25,8 +25,8 @@ public class MerodonAttack : MonoBehaviour
     {
         while (gameObject != null)
         {
-            yield return _attackWait;
             InstantiateBigLaser();
+            yield return _attackWait;
         }
     }
 

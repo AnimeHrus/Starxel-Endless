@@ -16,17 +16,17 @@ public class Score : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyHealth.OnEnemyKilled += AddScore;
+        EnemyHealth.OnEnemyAddedScore += AddScore;
     }
 
     private void OnDisable()
     {
-        EnemyHealth.OnEnemyKilled -= AddScore;
+        EnemyHealth.OnEnemyAddedScore -= AddScore;
     }
 
-    private void AddScore()
+    private void AddScore(int value)
     {
-        _scoreCount++;
+        _scoreCount += value;
         _text.text = _scoreStartText + " " + _scoreCount.ToString();
     }
 }

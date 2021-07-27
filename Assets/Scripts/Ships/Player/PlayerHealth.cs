@@ -2,7 +2,10 @@
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _explosionFX;
     private int _health = 3;
+    private bool _canTakeDamage = true;
     public delegate void HealthChange(int health);
     public static HealthChange OnHealthChanged;
     public delegate void DamageTake();
@@ -10,12 +13,37 @@ public class PlayerHealth : MonoBehaviour
     public delegate void Killed();
     public static Killed OnBeKilled;
 
+    private void OnEnable()
+    {
+        PlayerImmortal.OnImmortalStart += DenyDamage;
+        PlayerImmortal.OnImmortalEnd += AllowDamage;
+    }
+
+    private void OnDisable()
+    {
+        PlayerImmortal.OnImmortalStart -= DenyDamage;
+        PlayerImmortal.OnImmortalEnd -= AllowDamage;
+    }
+
     public void ApplyDamage()
     {
-        _health--;
-        OnHealthChanged?.Invoke(_health);
-        OnDamageTaked?.Invoke();
-        CheckToDie();
+        if (_canTakeDamage)
+        {
+            _health--;
+            OnHealthChanged?.Invoke(_health);
+            OnDamageTaked?.Invoke();
+            CheckToDie();
+        }
+    }
+
+    private void DenyDamage()
+    {
+        _canTakeDamage = false;
+    }
+
+    private void AllowDamage()
+    {
+        _canTakeDamage = true;
     }
 
     private void CheckToDie()
@@ -23,7 +51,13 @@ public class PlayerHealth : MonoBehaviour
         if (_health == 0)
         {
             OnBeKilled?.Invoke();
+            InstantiateExplosionFX();
             Destroy(gameObject);
         }
+    }
+
+    private void InstantiateExplosionFX()
+    {
+        Instantiate(_explosionFX, transform.position, Quaternion.identity);
     }
 }

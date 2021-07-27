@@ -10,6 +10,18 @@ public class PlayerAnimation : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        PlayerImmortal.OnImmortalStart += PlayImmortalAnimation;
+        PlayerImmortal.OnImmortalEnd += PlayIdleAnimation;
+    }
+
+    private void OnDisable()
+    {
+        PlayerImmortal.OnImmortalStart -= PlayImmortalAnimation;
+        PlayerImmortal.OnImmortalEnd -= PlayIdleAnimation;
+    }
+
     private void PlayImmortalAnimation()
     {
         _animator.Play("Immortal");
