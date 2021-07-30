@@ -3,8 +3,8 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class PhoridaeMovement : MonoBehaviour
 {
-    private const float _minVelocity = 0.1f;
-    private const float _maxVelocity = 0.4f;
+    private const float _minVelocity = 1f;
+    private const float _maxVelocity = 4f;
     private float _velocity;
     private Rigidbody2D _rigidBody;
     private Transform _playerTransform;
@@ -27,6 +27,6 @@ public class PhoridaeMovement : MonoBehaviour
     private void MoveToPlayer()
     {
         Vector3 direction = _playerTransform.position - transform.position;
-        _rigidBody.velocity = direction * _velocity;
+        _rigidBody.velocity = direction.normalized * _velocity;
     }
 }

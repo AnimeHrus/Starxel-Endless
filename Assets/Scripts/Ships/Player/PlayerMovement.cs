@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Vector3 direction = touchPosition - transform.position;
-        _rigidBody.velocity = direction * _velocity;
+        _rigidBody.velocity = direction.normalized * _velocity;
     }
 
     private void OnEnable()

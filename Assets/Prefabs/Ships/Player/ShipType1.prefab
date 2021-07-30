@@ -4831,6 +4831,8 @@ GameObject:
   - component: {fileID: 1506718506}
   - component: {fileID: 3321701164819619881}
   - component: {fileID: 1783004923017251984}
+  - component: {fileID: 4755913618313237482}
+  - component: {fileID: 948678768036363873}
   m_Layer: 0
   m_Name: ShipType1
   m_TagString: Player
@@ -4969,7 +4971,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -4985,7 +4987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37f5709c9126924a97b3bc0311b5b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocity: 1
+  _velocity: 20
 --- !u!114 &294929376651210897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,6 +5047,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _immortalCoolDown: 3
+--- !u!114 &4755913618313237482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e5e9ae755d14044a667e7f1026a73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
+  _velocity: 5
+--- !u!114 &948678768036363873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641724304301239887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94444955ad574f541ac6e86ac178b39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!1 &2804284295036119850
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyLaserMovement : MonoBehaviour
@@ -8,22 +6,20 @@ public class EnemyLaserMovement : MonoBehaviour
     [SerializeField]
     private float _velocity;
     [SerializeField]
-    private float _amplitudeMove;
-    [SerializeField]
     private float _frequencyMove;
+    [SerializeField]
+    private float _magnitudeMove;
     private Rigidbody2D _rigidBody;
-    private float _startZRotation;
 
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
-        _startZRotation = transform.localRotation.z;
     }
 
     private void FixedUpdate()
     {
         AddVelocity();
-        
+        //ChangeAngle();
     }
 
     private void Update()
@@ -38,6 +34,7 @@ public class EnemyLaserMovement : MonoBehaviour
 
     private void ChangeAngle()
     {
-        transform.localRotation *= Quaternion.Euler(0, 0, Mathf.Cos(Time.time * _amplitudeMove) * _frequencyMove);
+        //_rigidBody.AddTorque(Mathf.Sin(Time.time * _frequencyMove) * _magnitudeMove, ForceMode2D.Force);
+        transform.Rotate(0, 0, Mathf.Sin(Time.time * _frequencyMove) * _magnitudeMove * Time.deltaTime);
     }
 }

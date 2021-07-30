@@ -1225,9 +1225,12 @@ MonoBehaviour:
   - {fileID: 7275311360660395903, guid: 86429538106077f4b876ea8525af39d1, type: 3}
   - {fileID: 4241866196858089815, guid: 299954b8b0e7e2a428fbaab5eb47379b, type: 3}
   - {fileID: 5516257072051654910, guid: 8af27bf3a54338a439f316d9c10101a9, type: 3}
+  _boss: {fileID: 7241487829504533982, guid: e347d9ab59dc14c4cb0d98ea94cf669e, type: 3}
   _player: {fileID: 1200288608}
-  _FirstWaveCount: 3
+  _FirstWaveCount: 2
+  _enemyKillForBoss: 50
   _spawnCoolDown: 1
+  _spawnBossCoolDown: 3
   _constrictionProcent: 20
 --- !u!114 &2052850544
 MonoBehaviour:
@@ -1385,6 +1388,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1823615657}
     m_Modifications:
+    - target: {fileID: 948678768036363873, guid: d9881fa27398dcd4392ebfac4765d6ce,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 2641724304301239873, guid: d9881fa27398dcd4392ebfac4765d6ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1445,6 +1453,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipType1
       objectReference: {fileID: 0}
+    - target: {fileID: 2641724304301239887, guid: d9881fa27398dcd4392ebfac4765d6ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755913618313237482, guid: d9881fa27398dcd4392ebfac4765d6ce,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 519420031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9881fa27398dcd4392ebfac4765d6ce, type: 3}
 --- !u!4 &2641724305151575625 stripped

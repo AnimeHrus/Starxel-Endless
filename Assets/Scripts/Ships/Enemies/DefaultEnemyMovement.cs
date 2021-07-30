@@ -3,33 +3,38 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class DefaultEnemyMovement : MonoBehaviour
 {
+    [SerializeField]
+    private float _minPushForce = 1.5f;
+    [SerializeField]
+    private float _maxPushForce = 9.5f;
+    [SerializeField]
+    private float _minFrequencyMove = 1f;
+    [SerializeField]
+    private float _maxFrequencyMove = 3f;
+    [SerializeField]
+    private float _magnitudeDifference = 0.5f;
     private Rigidbody2D _rigidBody;
-    private const float _minPushForce = 1.5f;
-    private const float _maxPushForce = 9.5f;
     private float _pushForce;
-    private const float _minAmplitudeMove = 1f;
-    private const float _maxAmplitudeMove = 3f;
-    private float _amplitudeMove;
-    private const float _frequencyDifference = 0.5f;
-    private float _minFrequencyMove;
-    private float _maxFrequencyMove;
     private float _frequencyMove;
+    private float _minMagnitudeMove;
+    private float _maxMagnitudeMove;
+    private float _magnitudeMove;
 
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _pushForce = Random.Range(_minPushForce, _maxPushForce);
-        _amplitudeMove = Random.Range(_minAmplitudeMove, _maxAmplitudeMove);
-        if (_amplitudeMove - _frequencyDifference < _minAmplitudeMove)
+        _frequencyMove = Random.Range(_minFrequencyMove, _maxFrequencyMove);
+        if (_frequencyMove - _magnitudeDifference < _minFrequencyMove)
         {
-            _minFrequencyMove = _minAmplitudeMove;
+            _minMagnitudeMove = _minFrequencyMove;
         }
         else
         {
-            _minFrequencyMove = _amplitudeMove - _frequencyDifference;
+            _minMagnitudeMove = _frequencyMove - _magnitudeDifference;
         }
-        _maxFrequencyMove = _amplitudeMove + _minAmplitudeMove;
-        _frequencyMove = Random.Range(_minFrequencyMove, _maxFrequencyMove);
+        _maxMagnitudeMove = _frequencyMove + _minFrequencyMove;
+        _magnitudeMove = Random.Range(_minMagnitudeMove, _maxMagnitudeMove);
     }
 
     private void Start()
@@ -49,6 +54,6 @@ public class DefaultEnemyMovement : MonoBehaviour
 
     private void CosinusMove()
     {
-        _rigidBody.AddForce(new Vector2(Mathf.Cos(Time.time * _amplitudeMove) * _frequencyMove, 0), ForceMode2D.Force);
+        _rigidBody.AddForce(new Vector2(Mathf.Sin(-Time.time * _frequencyMove) * _magnitudeMove, 0), ForceMode2D.Force);
     }
 }
