@@ -4,30 +4,15 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class StarState : MonoBehaviour
 {  
-    [SerializeField]
-    private float _velocityFast;
-    [SerializeField]
-    private float _velocityNormal;
-    [SerializeField]
-    private float _velocitySlow;
-    [SerializeField]
-    [Range(0, 1)]
-    private float _alphaFast;
-    [SerializeField]
-    [Range(0, 1)]
-    private float _alphaNormal;
-    [SerializeField]
-    [Range(0, 1)]
-    private float _alphaSlow;
-    [SerializeField]
-    [Range(-10, -15)]
-    private int _orderInLayerFast;
-    [SerializeField]
-    [Range(-10, -15)]
-    private int _orderInLayerNormal;
-    [SerializeField]
-    [Range(-10, -15)]
-    private int _orderInLayerSlow;
+    [SerializeField] private float _velocityFast;
+    [SerializeField] private float _velocityNormal;
+    [SerializeField] private float _velocitySlow;
+    [SerializeField] [Range(0, 1)] private float _alphaFast;
+    [SerializeField] [Range(0, 1)] private float _alphaNormal;
+    [SerializeField] [Range(0, 1)] private float _alphaSlow;
+    [SerializeField] [Range(-10, -15)] private int _orderInLayerFast;
+    [SerializeField] [Range(-10, -15)] private int _orderInLayerNormal;
+    [SerializeField] [Range(-10, -15)] private int _orderInLayerSlow;
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private int _orderInLayer;
@@ -40,11 +25,12 @@ public class StarState : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         SetRandomState();
+        SetVariables();
     }
 
     private void Start()
     {
-        SetVelocity();
+        SetDownDirectionVelocity();
         SetColorAlpha();
         SetOrderInLayer();
     }
@@ -53,7 +39,6 @@ public class StarState : MonoBehaviour
     {
         var enumValues = System.Enum.GetValues(typeof(StarStates));
         _starState = (StarStates)Random.Range(0, enumValues.Length);
-        SetVariables();
     }
 
     private void SetVariables()
@@ -61,39 +46,25 @@ public class StarState : MonoBehaviour
         switch (_starState)
         {
             case StarStates.Fast:
-                SetFastStateVariables();
+                SetVariables(_velocityFast, _alphaFast, _orderInLayerFast);
                 break;
             case StarStates.Normal:
-                SetNormalStateVariables();
+                SetVariables(_velocityNormal, _alphaNormal, _orderInLayerNormal);
                 break;
             case StarStates.Slow:
-                SetSlowStateVariables();
+                SetVariables(_velocitySlow, _alphaSlow, _orderInLayerSlow);
                 break;
         }
     }
 
-    private void SetFastStateVariables()
+    private void SetVariables(float velocity, float alpha, int orderInLayer)
     {
-        _velocity = _velocityFast;
-        _color = new Color(1, 1, 1, _alphaFast);
-        _orderInLayer = _orderInLayerFast;
+        _velocity = velocity;
+        _color = new Color(1, 1, 1, alpha);
+        _orderInLayer = orderInLayer;
     }
 
-    private void SetNormalStateVariables()
-    {
-        _velocity = _velocityNormal;
-        _color = new Color(1, 1, 1, _alphaNormal);
-        _orderInLayer = _orderInLayerNormal;
-    }
-
-    private void SetSlowStateVariables()
-    {
-        _velocity = _velocitySlow;
-        _color = new Color(1, 1, 1, _alphaSlow);
-        _orderInLayer = _orderInLayerSlow;
-    }
-
-    private void SetVelocity()
+    private void SetDownDirectionVelocity()
     {
         _rigidBody.velocity = Vector2.down * _velocity;
     }

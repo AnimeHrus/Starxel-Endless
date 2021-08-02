@@ -2,10 +2,8 @@
 
 public class PlayerLaserCollision : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] _hitFX;
-    [SerializeField]
-    private Transform _contactTransform;
+    [SerializeField] private GameObject[] _hitFX;
+    [SerializeField] private Transform _contactTransform;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -3,8 +3,7 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class BombMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float _pushForce;
+    [SerializeField] private float _pushForce;
     private Rigidbody2D _rigidBody;
 
     private void Awake()

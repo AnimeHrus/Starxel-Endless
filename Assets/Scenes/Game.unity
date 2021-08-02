@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba17fdef5d7c1d42bbc4c46a56a1185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parallaxEffect: 4
+  _parallaxVelocity: 4
 --- !u!50 &156683595
 Rigidbody2D:
   serializedVersion: 4
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   _boss: {fileID: 7241487829504533982, guid: e347d9ab59dc14c4cb0d98ea94cf669e, type: 3}
   _player: {fileID: 1200288608}
   _FirstWaveCount: 2
-  _enemyKillForBoss: 50
+  _enemyKillForBoss: 25
   _spawnCoolDown: 1
   _spawnBossCoolDown: 3
   _constrictionProcent: 20
@@ -1452,11 +1452,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShipType1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2641724304301239887, guid: d9881fa27398dcd4392ebfac4765d6ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4755913618313237482, guid: d9881fa27398dcd4392ebfac4765d6ce,
         type: 3}

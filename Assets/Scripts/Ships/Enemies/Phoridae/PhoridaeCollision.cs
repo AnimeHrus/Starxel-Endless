@@ -2,8 +2,7 @@
 
 public class PhoridaeCollision : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] _hits;
+    [SerializeField] private GameObject[] _hits;
 
     private void OnTriggerStay2D(Collider2D collision)
     {

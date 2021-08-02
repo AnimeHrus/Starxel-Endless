@@ -2,12 +2,9 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField]
-    private int _health;
-    [SerializeField]
-    private int _scoreValue;
-    [SerializeField]
-    private GameObject _explosionFX;
+    [SerializeField] private int _health;
+    [SerializeField] private int _scoreValue;
+    [SerializeField] private GameObject _explosionFX;
     public delegate void EnemyKilled();
     public static event EnemyKilled OnEnemyKilled;
     public delegate void EnemyScore(int value);

@@ -3,12 +3,9 @@ using UnityEngine;
 
 public class MerodonAttack : MonoBehaviour
 {
-    [SerializeField]
-    private Transform _weaponTransform;
-    [SerializeField]
-    private GameObject _bigLaser;
-    [SerializeField]
-    private float _attackCoolDown;
+    [SerializeField] private Transform _weaponTransform;
+    [SerializeField] private GameObject _bigLaser;
+    [SerializeField] private float _attackCoolDown;
     private WaitForSeconds _attackWait;
 
     private void Awake()

@@ -5,10 +5,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class TextPulse : MonoBehaviour
 {
-    [SerializeField]
-    private float _scaleSize;
-    [SerializeField]
-    private float _scaleChangeSpeed;
+    [SerializeField] private float _scaleSize;
+    [SerializeField] private float _scaleChangeSpeed;
     private float _startScale;
     private float _targedScale;
     private WaitForEndOfFrame _endFrameWait;

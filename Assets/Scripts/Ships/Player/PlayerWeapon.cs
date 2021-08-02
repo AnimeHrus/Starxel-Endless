@@ -3,14 +3,10 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _playerLaser;
-    [SerializeField]
-    private GameObject _shootFX;
-    [SerializeField]
-    private Transform[] _gunsPositions;
-    [SerializeField]
-    private float _attackIntensityTime;
+    [SerializeField] private GameObject _playerLaser;
+    [SerializeField] private GameObject _shootFX;
+    [SerializeField] private Transform[] _gunsPositions;
+    [SerializeField] private float _attackIntensityTime;
     private WaitForSeconds _attackIntensityWait;
 
     private void Awake()

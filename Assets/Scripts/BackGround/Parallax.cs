@@ -4,8 +4,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class Parallax : MonoBehaviour
 {
-    [SerializeField]
-    private float _parallaxEffect;
+    [SerializeField] private float _parallaxVelocity;
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private Vector2 _startPosition;
@@ -21,10 +20,10 @@ public class Parallax : MonoBehaviour
 
     private void Start()
     {
-        SetVelocity();
+        SetDownDirectionVelocity();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (transform.position.y < _endPositionY)
         {
@@ -32,8 +31,8 @@ public class Parallax : MonoBehaviour
         }
     }
 
-    private void SetVelocity()
+    private void SetDownDirectionVelocity()
     {
-        _rigidBody.velocity = Vector2.down * _parallaxEffect;
+        _rigidBody.velocity = Vector2.down * _parallaxVelocity;
     }
 }

@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class PlayerImmortal : MonoBehaviour
 {
-    [SerializeField]
-    private float _immortalCoolDown;
+    [SerializeField] private float _immortalCoolDown;
     private WaitForSeconds _immortalWait;
     public delegate void ImmortalState();
     public static event ImmortalState OnImmortalStart;

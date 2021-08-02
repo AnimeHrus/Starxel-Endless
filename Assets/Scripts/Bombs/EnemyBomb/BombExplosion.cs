@@ -3,16 +3,11 @@ using UnityEngine;
 
 public class BombExplosion : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _laser;
-    [SerializeField]
-    private int _minLaser;
-    [SerializeField]
-    private int _maxLaser;
-    [SerializeField]
-    private GameObject _explosionFX;
-    [SerializeField]
-    private float _timer;
+    [SerializeField] private GameObject _laser;
+    [SerializeField] private int _minLaser;
+    [SerializeField] private int _maxLaser;
+    [SerializeField] private GameObject _explosionFX;
+    [SerializeField] private float _timer;
     private WaitForSeconds _timerWait;
 
     private void Awake()

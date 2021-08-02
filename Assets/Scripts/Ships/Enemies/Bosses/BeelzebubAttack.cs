@@ -3,18 +3,12 @@ using UnityEngine;
 
 public class BeelzebubAttack : MonoBehaviour
 {
-    [SerializeField]
-    private Transform[] _laserWeapons;
-    [SerializeField]
-    private Transform[] _bombWeapons;
-    [SerializeField]
-    private GameObject _bigLaser;
-    [SerializeField]
-    private GameObject _bomb;
-    [SerializeField]
-    private float _laserAttackCoolDown;
-    [SerializeField]
-    private float _bombAttackCoolDown;
+    [SerializeField] private Transform[] _laserWeapons;
+    [SerializeField] private Transform[] _bombWeapons;
+    [SerializeField] private GameObject _bigLaser;
+    [SerializeField] private GameObject _bomb;
+    [SerializeField] private float _laserAttackCoolDown;
+    [SerializeField] private float _bombAttackCoolDown;
     private WaitForSeconds _laserAttackWait;
     private WaitForSeconds _bombAttackWait;
     private Transform _playerTransform;

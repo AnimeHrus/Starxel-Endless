@@ -2,8 +2,7 @@
 
 public class PlayerWrap : MonoBehaviour
 {
-    [SerializeField]
-    private Camera _camera;
+    [SerializeField] private Camera _camera;
     private SpriteRenderer _spriteRenderer;
     private float _spriteXSize;
     private float _spriteYSize;

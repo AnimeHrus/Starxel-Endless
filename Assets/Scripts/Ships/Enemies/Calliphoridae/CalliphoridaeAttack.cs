@@ -3,14 +3,10 @@ using UnityEngine;
 
 public class CalliphoridaeAttack : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _bomb;
-    [SerializeField]
-    private Transform _weaponTransform;
-    [SerializeField]
-    private GameObject _shootFX;
-    [SerializeField]
-    private float _attackCoolDown;
+    [SerializeField] private GameObject _bomb;
+    [SerializeField] private Transform _weaponTransform;
+    [SerializeField] private GameObject _shootFX;
+    [SerializeField] private float _attackCoolDown;
     private WaitForSeconds _attackWait;
     private Vector3 _shootFXQuaternion;
 

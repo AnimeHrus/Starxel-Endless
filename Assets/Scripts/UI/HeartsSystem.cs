@@ -2,10 +2,8 @@
 
 public class HeartsSystem : MonoBehaviour
 {
-    [SerializeField]
-    private Animator[] _heartAnimators;
-    [SerializeField]
-    private string _heartAnimationName;
+    [SerializeField] private Animator[] _heartAnimators;
+    [SerializeField] private string _heartAnimationName;
 
     private void OnEnable()
     {

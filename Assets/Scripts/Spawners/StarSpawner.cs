@@ -3,14 +3,10 @@ using UnityEngine;
 
 public class StarSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private Camera _camera;
-    [SerializeField]
-    private GameObject _star;
-    [SerializeField]
-    private int _firstStarsCount;
-    [SerializeField]
-    private float _spawnCoolDown;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private GameObject _star;
+    [SerializeField] private int _firstStarsCount;
+    [SerializeField] private float _spawnCoolDown;
     private WaitForSeconds _spawnWait;
     private Vector2 _spawnPosition;
 

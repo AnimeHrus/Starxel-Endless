@@ -2,8 +2,7 @@
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _explosionFX;
+    [SerializeField] private GameObject _explosionFX;
     private int _health = 3;
     private bool _canTakeDamage = true;
     public delegate void HealthChange(int health);

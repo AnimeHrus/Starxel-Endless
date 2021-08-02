@@ -4,25 +4,15 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner Instance;
-    [SerializeField]
-    private Camera _camera;
-    [SerializeField]
-    private GameObject[] _enemies;
-    [SerializeField]
-    private GameObject _boss;
-    [SerializeField]
-    private GameObject _player;
-    [SerializeField]
-    private int _FirstWaveCount;
-    [SerializeField]
-    private int _enemyKillForBoss;
-    [SerializeField]
-    private float _spawnCoolDown;
-    [SerializeField]
-    private float _spawnBossCoolDown;
-    [SerializeField]
-    [Range(0, 30)]
-    private float _constrictionProcent;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private GameObject[] _enemies;
+    [SerializeField] private GameObject _boss;
+    [SerializeField] private GameObject _player;
+    [SerializeField] private int _FirstWaveCount;
+    [SerializeField] private int _enemyKillForBoss;
+    [SerializeField] private float _spawnCoolDown;
+    [SerializeField] private float _spawnBossCoolDown;
+    [SerializeField] [Range(0, 30)] private float _constrictionProcent;
     private WaitForSeconds _spawnWait;
     private WaitForSeconds _spawnBossWait;
     private Vector2 _spawnPosition;

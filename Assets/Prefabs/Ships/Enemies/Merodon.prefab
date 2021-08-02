@@ -178,6 +178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c5a424d462c9547bed44e048d42b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minPushForce: 1.5
+  _maxPushForce: 9.5
+  _minFrequencyMove: 1
+  _maxFrequencyMove: 3
+  _magnitudeDifference: 0.5
 --- !u!114 &8672556803459949116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f987c4cf3d7e6479568555b8b918fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
-  _scoreValue: 25
+  _health: 20
+  _scoreValue: 35
   _explosionFX: {fileID: 1491978069300408847, guid: e52d73cb01ca4cc4ea70b8a04a454ac6,
     type: 3}
 --- !u!114 &5171766166457585646

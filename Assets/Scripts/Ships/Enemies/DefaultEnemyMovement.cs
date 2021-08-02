@@ -3,16 +3,11 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class DefaultEnemyMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float _minPushForce = 1.5f;
-    [SerializeField]
-    private float _maxPushForce = 9.5f;
-    [SerializeField]
-    private float _minFrequencyMove = 1f;
-    [SerializeField]
-    private float _maxFrequencyMove = 3f;
-    [SerializeField]
-    private float _magnitudeDifference = 0.5f;
+    [SerializeField] private float _minPushForce = 1.5f;
+    [SerializeField] private float _maxPushForce = 9.5f;
+    [SerializeField] private float _minFrequencyMove = 1f;
+    [SerializeField] private float _maxFrequencyMove = 3f;
+    [SerializeField] private float _magnitudeDifference = 0.5f;
     private Rigidbody2D _rigidBody;
     private float _pushForce;
     private float _frequencyMove;
@@ -44,7 +39,7 @@ public class DefaultEnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CosinusMove();
+        SinusMove();
     }
 
     private void AddFirstPush()
@@ -52,7 +47,7 @@ public class DefaultEnemyMovement : MonoBehaviour
         _rigidBody.velocity = -transform.up * _pushForce;
     }
 
-    private void CosinusMove()
+    private void SinusMove()
     {
         _rigidBody.AddForce(new Vector2(Mathf.Sin(-Time.time * _frequencyMove) * _magnitudeMove, 0), ForceMode2D.Force);
     }

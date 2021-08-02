@@ -2,10 +2,8 @@
 
 public class PlayerAppearance : MonoBehaviour
 {
-    [SerializeField]
-    private Camera _camera;
-    [SerializeField]
-    private float _velocity;
+    [SerializeField] private Camera _camera;
+    [SerializeField] private float _velocity;
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private float _spriteXSize;

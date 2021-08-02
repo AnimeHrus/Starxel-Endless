@@ -3,8 +3,7 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerLaserMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float _velocity;
+    [SerializeField] private float _velocity;
     private Rigidbody2D _rigidBody;
 
     private void Awake()
@@ -14,10 +13,10 @@ public class PlayerLaserMovement : MonoBehaviour
 
     private void Start()
     {
-        AddVelocity();
+        AddUpDirectionVelocity();
     }
 
-    private void AddVelocity()
+    private void AddUpDirectionVelocity()
     {
         _rigidBody.velocity = Vector2.up * _velocity;
     }
