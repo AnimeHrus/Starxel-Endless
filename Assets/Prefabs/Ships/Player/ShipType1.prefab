@@ -5007,7 +5007,7 @@ MonoBehaviour:
   _gunsPositions:
   - {fileID: 5290063422944061942}
   - {fileID: 3333414496851725397}
-  _attackIntensityTime: 0.2
+  _attackIntensityTime: 0.3
 --- !u!114 &1506718506
 MonoBehaviour:
   m_ObjectHideFlags: 0
