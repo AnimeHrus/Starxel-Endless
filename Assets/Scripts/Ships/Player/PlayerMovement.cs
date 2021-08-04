@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _velocity;
-    private Rigidbody2D _rigidBody;
+    [SerializeField] private float _speed;
+    private SpriteRenderer _spriteRenderer;
+    private float _spriteYSize;
 
     private void Awake()
     {
-        _rigidBody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteYSize = _spriteRenderer.bounds.size.y;
     }
 
     private void OnEnable()
@@ -23,8 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveToTouchPosition(Vector3 touchPosition)
     {
-
-        Vector3 direction = touchPosition - transform.position;
-        _rigidBody.velocity = direction.normalized * _velocity;
+        Vector2 direction = new Vector2(touchPosition.x, touchPosition.y + _spriteYSize);
+        transform.position = Vector2.MoveTowards(transform.position, direction, _speed * Time.deltaTime);
     }
 }

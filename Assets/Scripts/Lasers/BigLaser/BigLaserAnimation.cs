@@ -18,4 +18,10 @@ public class BigLaserAnimation : MonoBehaviour
         _animator.Play("Activate");
         _spriteRenderer.sortingOrder = 2;
     }
+
+    private void PlayDeactivateAnimation()
+    {
+        _animator.Play("Deactive");
+        _spriteRenderer.sortingOrder = -1;
+    }
 }

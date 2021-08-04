@@ -16,4 +16,9 @@ public class BigLaserCollision : MonoBehaviour
     {
         _canDoDamage = true;
     }
+
+    private void DenyDoDamage()
+    {
+        _canDoDamage = false;
+    }
 }
